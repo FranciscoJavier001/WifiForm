@@ -41,20 +41,6 @@ function App() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const { negocio, nombre, telefono, mac, fecha, costo, proximoMes } = form;
-
-    if (
-      negocio.trim().length < 2 ||
-      nombre.trim().length < 2 ||
-      telefono.trim().length < 5 ||
-      mac.trim().length < 11 ||
-      fecha.trim().length < 4 ||
-      costo.trim().length === 0 ||
-      proximoMes.trim().length === 0
-    ) {
-      alert('Por favor llena todos los campos correctamente.');
-      return;
-    }
 
     if (editandoId) {
       await updateUser(editandoId, form);
